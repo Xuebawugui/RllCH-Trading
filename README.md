@@ -1,4 +1,4 @@
-# RllCH Brand Trading
+# RllCH Trading
 
 A Mytheresa-inspired personal shopping and sourcing site built with **Next.js**, ready for **GitHub** and **Vercel**.
 

@@ -1,7 +1,7 @@
 export const site = {
-  name: "RllCH Brand Trading",
+  name: "RllCH Trading",
   contactName: "RIICH",
-  tagline: "Premium brand sourcing & personal shopping",
+  tagline: "Premium sourcing & personal shopping",
   description:
     "Curated sportswear, streetwear, luxury fashion, leather goods, accessories, and electronics — sourced to your brief.",
   currency: "EUR",

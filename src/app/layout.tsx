@@ -27,6 +27,13 @@ export const metadata: Metadata = {
     description: site.description,
     type: "website",
   },
+  appleWebApp: {
+    title: site.name,
+  },
+};
+
+export const viewport = {
+  themeColor: "#1c1917",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
