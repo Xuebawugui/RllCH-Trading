@@ -7,7 +7,7 @@ export const site = {
   currency: "EUR",
   locale: "fr-FR",
   contactEmail:
-    process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "preciousjohnrm5@gmail.com",
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "riitch.xx@gmail.com",
   contactPhone: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "0780297449",
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "33780297449",
