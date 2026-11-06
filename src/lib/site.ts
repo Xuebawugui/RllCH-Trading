@@ -1,6 +1,6 @@
 export const site = {
   name: "RIICH Trading",
-  contactName: "RIICH",
+  contactName: "riich",
   tagline: "Sourcing premium & shopping personnel",
   description:
     "Sportswear, streetwear, mode de luxe, maroquinerie, accessoires et électronique — sélectionnés selon votre brief.",
