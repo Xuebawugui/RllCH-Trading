@@ -1,5 +1,5 @@
 export const site = {
-  name: "RIICH Trading",
+  name: "RIICH",
   contactName: "riich",
   tagline: "Sourcing premium & shopping personnel",
   description:
