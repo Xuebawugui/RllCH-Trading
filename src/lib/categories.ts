@@ -1,4 +1,5 @@
 import { inventory, inventoryForCategory } from "@/lib/inventory";
+import { site } from "@/lib/site";
 
 export type CategorySlug =
   | "sportswear-sneakers"
@@ -30,9 +31,7 @@ export type Category = {
   products: Product[];
 };
 
-function toProduct(
-  item: (typeof inventory)[number],
-): Product {
+function toProduct(item: (typeof inventory)[number]): Product {
   return {
     id: item.id,
     brand: item.brand,
@@ -47,10 +46,10 @@ const categoryDefinitions: Omit<Category, "products">[] = [
   {
     slug: "sportswear-sneakers",
     title: "Sportswear & Sneakers",
-    shortTitle: "Sportswear",
+    shortTitle: "Sport",
     priceFrom: 50,
     description:
-      "Performance and lifestyle sneakers from leading sportswear houses — Tech Fleece, running icons, and seasonal drops sourced to your size and budget.",
+      "Sneakers performance et lifestyle des grandes maisons sport — Tech Fleece, icônes running et drops saisonniers, selon votre taille et budget.",
     brands: [
       "Nike",
       "Nike Tech",
@@ -61,20 +60,20 @@ const categoryDefinitions: Omit<Category, "products">[] = [
     ],
     heroImage:
       "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1600&q=80",
-    heroImageAlt: "Red Nike sneaker on vibrant background",
+    heroImageAlt: "Sneaker Nike rouge sur fond coloré",
     highlights: [
-      "Authentic pairs from EU & global retailers",
-      "Size matching and restock alerts",
-      "Bundles for tracksuits and matching sets",
+      "Paires authentiques auprès de revendeurs UE et internationaux",
+      "Recherche de taille et alertes restock",
+      "Ensembles survêtements et looks assortis",
     ],
   },
   {
     slug: "streetwear-clothing",
-    title: "Streetwear & Clothing",
+    title: "Streetwear & Vêtements",
     shortTitle: "Streetwear",
     priceFrom: 50,
     description:
-      "Essentials, premium casualwear, and contemporary labels — from wardrobe staples to limited collaborations.",
+      "Essentiels, casual premium et labels contemporains — du basique de garde-robe aux collaborations limitées.",
     brands: [
       "Essentials",
       "Ralph Lauren",
@@ -85,20 +84,20 @@ const categoryDefinitions: Omit<Category, "products">[] = [
     ],
     heroImage:
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&q=80",
-    heroImageAlt: "Clothing racks in a modern boutique",
+    heroImageAlt: "Portants de vêtements dans une boutique moderne",
     highlights: [
-      "Seasonal edits for men and women",
-      "Brand-specific sizing guidance",
-      "Gift-ready packaging on request",
+      "Sélections saisonnières homme et femme",
+      "Conseils de taille par marque",
+      "Emballage cadeau sur demande",
     ],
   },
   {
     slug: "luxury-fashion",
-    title: "Luxury Fashion",
-    shortTitle: "Luxury",
+    title: "Mode de luxe",
+    shortTitle: "Luxe",
     priceFrom: 100,
     description:
-      "Designer ready-to-wear from the houses you follow — outerwear, tailoring, and statement pieces sourced with care.",
+      "Prêt-à-porter designer des maisons que vous suivez — outerwear, tailoring et pièces statement, sourcées avec soin.",
     brands: [
       "Moncler",
       "Canada Goose",
@@ -109,20 +108,20 @@ const categoryDefinitions: Omit<Category, "products">[] = [
     ],
     heroImage:
       "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80",
-    heroImageAlt: "Luxury fashion editorial",
+    heroImageAlt: "Éditorial mode de luxe",
     highlights: [
-      "Authentication-first sourcing",
-      "Private quotes within 24–48 hours",
-      "Seasonal wardrobe planning",
+      "Sourcing avec priorité à l'authenticité",
+      "Devis personnalisés sous 24–48 h",
+      "Accompagnement garde-robe saisonnière",
     ],
   },
   {
     slug: "bags-leather",
-    title: "Bags & Leather Goods",
-    shortTitle: "Bags",
+    title: "Sacs & Maroquinerie",
+    shortTitle: "Maroquinerie",
     priceFrom: 80,
     description:
-      "Handbags, wallets, cardholders, belts, and small leather goods from heritage and contemporary maisons.",
+      "Sacs, portefeuilles, porte-cartes, ceintures et petite maroquinerie — maisons heritage et contemporaines.",
     brands: [
       "Louis Vuitton",
       "Gucci",
@@ -133,44 +132,44 @@ const categoryDefinitions: Omit<Category, "products">[] = [
     ],
     heroImage:
       "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=1600&q=80",
-    heroImageAlt: "Luxury handbag on marble surface",
+    heroImageAlt: "Sac de luxe sur marbre",
     highlights: [
-      "New, pre-owned, and vintage on request",
-      "Hardware and date-code checks",
-      "Insurance-friendly shipping options",
+      "Neuf, seconde main et vintage sur demande",
+      "Contrôle hardware et date codes",
+      "Options d'expédition assurées",
     ],
   },
   {
     slug: "shoes-accessories",
-    title: "Shoes & Accessories",
-    shortTitle: "Accessories",
+    title: "Chaussures & Accessoires",
+    shortTitle: "Accessoires",
     priceFrom: 50,
     description:
-      "Designer footwear, luxury sneakers, sunglasses, belts, watches, and finishing touches for every look.",
+      "Chaussures designer, sneakers de luxe, lunettes, ceintures, montres et finitions pour chaque look.",
     brands: ["Prada", "Bottega Veneta", "Dior", "Louis Vuitton", "Gucci"],
     heroImage: "/products/prada-cup.jpg",
-    heroImageAlt: "Prada Cup designer sneakers",
+    heroImageAlt: "Baskets Prada Cup",
     highlights: [
-      "Full size runs for designer sneakers",
-      "Watch sourcing with documentation",
-      "Optical-grade sunglasses available",
+      "Grilles de tailles complètes pour sneakers designer",
+      "Sourcing montres avec documentation",
+      "Lunettes de soleil optiques disponibles",
     ],
   },
   {
     slug: "electronics",
-    title: "Electronics",
-    shortTitle: "Electronics",
+    title: "Électronique",
+    shortTitle: "Tech",
     priceFrom: 80,
     description:
-      "Premium tech and lifestyle electronics — phones, audio, wearables, and accessories from trusted retailers.",
+      "Tech premium et électronique lifestyle — téléphones, audio, wearables et accessoires auprès de revendeurs de confiance.",
     brands: ["Apple", "Sony", "Bose", "Samsung", "Dyson", "Bang & Olufsen"],
     heroImage:
       "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=1600&q=80",
-    heroImageAlt: "Minimal desk with laptop and accessories",
+    heroImageAlt: "Bureau minimaliste avec ordinateur",
     highlights: [
-      "EU warranty where available",
-      "Bundle deals for travel and home office",
-      "Gift wrapping for corporate orders",
+      "Garantie UE lorsque disponible",
+      "Offres groupées voyage et bureau",
+      "Emballage cadeau pour commandes pro",
     ],
   },
 ];
@@ -184,16 +183,19 @@ export function getCategoryBySlug(slug: string): Category | undefined {
   return categories.find((c) => c.slug === slug);
 }
 
-export function formatPrice(amount: number, currency = "EUR"): string {
-  return new Intl.NumberFormat("en-IE", {
+export function formatPrice(amount: number, currency = site.currency): string {
+  return new Intl.NumberFormat(site.locale, {
     style: "currency",
     currency,
     maximumFractionDigits: 0,
   }).format(amount);
 }
 
-export function formatProductPrice(amount: number, currency = "EUR"): string {
-  return new Intl.NumberFormat("en-IE", {
+export function formatProductPrice(
+  amount: number,
+  currency = site.currency,
+): string {
+  return new Intl.NumberFormat(site.locale, {
     style: "currency",
     currency,
     minimumFractionDigits: 2,

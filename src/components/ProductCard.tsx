@@ -30,7 +30,7 @@ export function ProductCard({ product }: Props) {
           href="/personal-shopping#quote-contact"
           className="inline-block pt-1 text-[11px] tracking-[0.15em] text-stone-800 uppercase underline-offset-4 hover:underline"
         >
-          Enquire
+          Nous contacter
         </Link>
       </div>
     </article>

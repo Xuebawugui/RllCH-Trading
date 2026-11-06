@@ -7,7 +7,6 @@ import {
   categories,
   formatPrice,
   getCategoryBySlug,
-  type CategorySlug,
 } from "@/lib/categories";
 
 type Props = {
@@ -21,7 +20,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const category = getCategoryBySlug(slug);
-  if (!category) return { title: "Category" };
+  if (!category) return { title: "Catégorie" };
   return {
     title: category.title,
     description: category.description,
@@ -47,7 +46,7 @@ export default async function CategoryPage({ params }: Props) {
         <div className="absolute inset-0 bg-black/35" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-4 pb-12 lg:px-6">
           <p className="text-[11px] tracking-[0.3em] text-white/80 uppercase">
-            From {formatPrice(category.priceFrom)}
+            À partir de {formatPrice(category.priceFrom)}
           </p>
           <h1 className="mt-3 font-serif text-4xl text-white lg:text-5xl">
             {category.title}
@@ -74,7 +73,7 @@ export default async function CategoryPage({ params }: Props) {
           </div>
           <aside className="border border-stone-200 bg-stone-50 p-6">
             <p className="text-[11px] tracking-[0.2em] text-stone-500 uppercase">
-              Brands we source
+              Marques sourcées
             </p>
             <ul className="mt-4 flex flex-wrap gap-2">
               {category.brands.map((brand) => (
@@ -87,10 +86,10 @@ export default async function CategoryPage({ params }: Props) {
               ))}
             </ul>
             <Link
-              href={`/personal-shopping?category=${category.slug as CategorySlug}`}
+              href="/personal-shopping#quote-contact"
               className="mt-6 block w-full bg-stone-900 py-3 text-center text-[11px] tracking-[0.2em] text-white uppercase transition hover:bg-stone-700"
             >
-              Request from this category
+              Demander dans cette catégorie
             </Link>
           </aside>
         </div>
@@ -99,10 +98,10 @@ export default async function CategoryPage({ params }: Props) {
       <section className="border-t border-stone-200 bg-white py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-6">
           <h2 className="font-serif text-2xl text-stone-900">
-            Available in this category
+            Disponible dans cette catégorie
           </h2>
           <p className="mt-2 text-sm text-stone-600">
-            Current in-stock pieces — contact me to reserve or purchase.
+            Pièces en stock — contactez-moi pour réserver ou acheter.
           </p>
           {category.products.length > 0 ? (
             <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-4 lg:gap-x-6">
@@ -112,14 +111,14 @@ export default async function CategoryPage({ params }: Props) {
             </div>
           ) : (
             <p className="mt-8 text-sm text-stone-600">
-              Nothing listed here right now.{" "}
+              Rien en ligne pour le moment.{" "}
               <Link
                 href="/personal-shopping#quote-contact"
                 className="text-stone-900 underline"
               >
-                Message me
+                Écrivez-moi
               </Link>{" "}
-              to source from this category.
+              pour sourcer dans cette catégorie.
             </p>
           )}
         </div>

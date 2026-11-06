@@ -36,7 +36,7 @@ export function HeroCarousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
-      aria-label="Shop by category"
+      aria-label="Parcourir par catégorie"
     >
       {categories.map((cat, index) => (
         <div
@@ -64,7 +64,7 @@ export function HeroCarousel() {
           {site.tagline}
         </p>
         <p className="mt-4 text-[11px] tracking-[0.25em] text-white/75 uppercase">
-          From {formatPrice(slide.priceFrom)}
+          À partir de {formatPrice(slide.priceFrom)}
         </p>
         <h1 className="mt-2 max-w-2xl font-serif text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
           {slide.title}
@@ -77,13 +77,13 @@ export function HeroCarousel() {
             href={`/categories/${slide.slug}`}
             className="bg-white px-8 py-3.5 text-[11px] tracking-[0.25em] text-stone-900 uppercase transition hover:bg-stone-100"
           >
-            Explore {slide.shortTitle}
+            Découvrir {slide.shortTitle}
           </Link>
           <Link
             href="/personal-shopping#quote-contact"
             className="border border-white/80 px-8 py-3.5 text-[11px] tracking-[0.25em] text-white uppercase transition hover:bg-white/10"
           >
-            Request a quote
+            Demander un devis
           </Link>
         </div>
       </div>
@@ -93,7 +93,7 @@ export function HeroCarousel() {
           type="button"
           onClick={() => goTo(active - 1)}
           className="hidden h-9 w-9 items-center justify-center border border-white/40 text-white transition hover:bg-white/10 sm:flex"
-          aria-label="Previous slide"
+          aria-label="Diapositive précédente"
         >
           ‹
         </button>
@@ -108,7 +108,7 @@ export function HeroCarousel() {
                   ? "w-8 bg-white"
                   : "w-1.5 bg-white/45 hover:bg-white/70"
               }`}
-              aria-label={`Go to ${cat.title}`}
+              aria-label={`Aller à ${cat.title}`}
               aria-current={index === active ? "true" : undefined}
             />
           ))}
@@ -117,7 +117,7 @@ export function HeroCarousel() {
           type="button"
           onClick={() => goTo(active + 1)}
           className="hidden h-9 w-9 items-center justify-center border border-white/40 text-white transition hover:bg-white/10 sm:flex"
-          aria-label="Next slide"
+          aria-label="Diapositive suivante"
         >
           ›
         </button>

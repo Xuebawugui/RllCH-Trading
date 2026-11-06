@@ -24,7 +24,7 @@ export function CategoryCard({ category, priority }: Props) {
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-6 text-white">
         <p className="text-[10px] tracking-[0.25em] uppercase opacity-90">
-          From {formatPrice(category.priceFrom)}
+          À partir de {formatPrice(category.priceFrom)}
         </p>
         <h2 className="mt-2 font-serif text-2xl tracking-wide">
           {category.title}
@@ -33,7 +33,7 @@ export function CategoryCard({ category, priority }: Props) {
           {category.brands.slice(0, 4).join(" · ")}
         </p>
         <span className="mt-4 inline-block text-[11px] tracking-[0.2em] uppercase underline-offset-4 group-hover:underline">
-          Explore
+          Découvrir
         </span>
       </div>
     </Link>

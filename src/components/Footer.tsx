@@ -17,7 +17,7 @@ export function Footer() {
 
         <div>
           <p className="text-[11px] tracking-[0.2em] text-stone-500 uppercase">
-            Shop by category
+            Par catégorie
           </p>
           <ul className="mt-4 space-y-2">
             {categories.map((cat) => (
@@ -43,7 +43,7 @@ export function Footer() {
                 href="/personal-shopping"
                 className="text-sm text-stone-700 transition hover:text-stone-900"
               >
-                Personal shopping
+                Shopping personnel
               </Link>
             </li>
             <li>
@@ -51,7 +51,7 @@ export function Footer() {
                 href="/about"
                 className="text-sm text-stone-700 transition hover:text-stone-900"
               >
-                How it works
+                Comment ça marche
               </Link>
             </li>
             <li>
@@ -67,7 +67,7 @@ export function Footer() {
 
         <div>
           <p className="text-[11px] tracking-[0.2em] text-stone-500 uppercase">
-            Connect
+            Nous suivre
           </p>
           <ul className="mt-4 space-y-2 text-sm text-stone-700">
             <li>
@@ -108,8 +108,8 @@ export function Footer() {
 
       <div className="border-t border-stone-200">
         <p className="mx-auto max-w-7xl px-4 py-6 text-center text-xs text-stone-500 lg:px-6">
-          © 2026 {site.name}. Brand names are used for category reference
-          only. Not affiliated with listed designers or retailers.
+          © 2026 {site.name}. Les noms de marques servent uniquement de repère
+          par catégorie. Aucun lien avec les maisons ou revendeurs cités.
         </p>
       </div>
     </footer>

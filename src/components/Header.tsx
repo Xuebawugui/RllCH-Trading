@@ -7,8 +7,8 @@ import { categories } from "@/lib/categories";
 import { site } from "@/lib/site";
 
 const navLinks = [
-  { href: "/personal-shopping", label: "Personal Shopping" },
-  { href: "/about", label: "About" },
+  { href: "/personal-shopping", label: "Shopping personnel" },
+  { href: "/about", label: "À propos" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -21,7 +21,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-white/95 backdrop-blur-md">
       <div className="border-b border-stone-100 bg-stone-50/80">
         <p className="mx-auto max-w-7xl px-4 py-2 text-center text-[11px] tracking-[0.2em] text-stone-600 uppercase">
-          Premium sourcing across Europe · Quotes in 24–48h
+          Sourcing premium en Europe · Devis sous 24–48 h
         </p>
       </div>
 
@@ -30,7 +30,7 @@ export function Header() {
           type="button"
           className="flex h-10 w-10 items-center justify-center lg:hidden"
           aria-expanded={menuOpen}
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
           onClick={() => setMenuOpen((o) => !o)}
         >
           <span className="sr-only">Menu</span>
@@ -58,7 +58,7 @@ export function Header() {
               className="text-xs tracking-[0.15em] text-stone-800 uppercase transition hover:text-stone-500"
               aria-expanded={categoriesOpen}
             >
-              Categories
+              Catégories
             </button>
             {categoriesOpen && (
               <div className="absolute top-full left-0 pt-3">
@@ -103,20 +103,20 @@ export function Header() {
           href="/personal-shopping#quote-contact"
           className="hidden border border-stone-900 px-4 py-2 text-[11px] tracking-[0.2em] text-stone-900 uppercase transition hover:bg-stone-900 hover:text-white sm:inline-block"
         >
-          Request a quote
+          Demander un devis
         </Link>
         <Link
           href="/personal-shopping#quote-contact"
           className="text-[11px] tracking-[0.15em] text-stone-800 uppercase sm:hidden"
         >
-          Quote
+          Devis
         </Link>
       </div>
 
       {menuOpen && (
         <nav className="border-t border-stone-200 bg-white px-4 py-6 lg:hidden">
           <p className="mb-3 text-[10px] tracking-[0.2em] text-stone-500 uppercase">
-            Categories
+            Catégories
           </p>
           <ul className="mb-6 space-y-3">
             {categories.map((cat) => (

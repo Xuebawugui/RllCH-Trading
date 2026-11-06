@@ -1,11 +1,11 @@
 export const site = {
   name: "RllCH Trading",
   contactName: "RIICH",
-  tagline: "Premium sourcing & personal shopping",
+  tagline: "Sourcing premium & shopping personnel",
   description:
-    "Curated sportswear, streetwear, luxury fashion, leather goods, accessories, and electronics — sourced to your brief.",
+    "Sportswear, streetwear, mode de luxe, maroquinerie, accessoires et électronique — sélectionnés selon votre brief.",
   currency: "EUR",
-  locale: "en-EU",
+  locale: "fr-FR",
   contactEmail:
     process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "preciousjohnrm5@gmail.com",
   contactPhone: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "0780297449",

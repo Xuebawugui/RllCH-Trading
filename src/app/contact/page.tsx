@@ -12,22 +12,22 @@ export default function ContactPage() {
       <p className="text-[11px] tracking-[0.3em] text-stone-500 uppercase">
         Contact
       </p>
-      <h1 className="mt-3 font-serif text-4xl text-stone-900">Get in touch</h1>
+      <h1 className="mt-3 font-serif text-4xl text-stone-900">Nous écrire</h1>
       <p className="mt-4 text-sm leading-relaxed text-stone-600">
-        For purchases and quotes, contact {site.contactName} directly by phone or
-        email, or visit the quote page for all details.
+        Pour un achat ou un devis, contactez {site.contactName} par téléphone ou
+        e-mail, ou consultez la page devis pour tous les détails.
       </p>
 
       <ul className="mt-10 space-y-6 border-t border-stone-200 pt-10 text-sm">
         <li>
           <p className="text-[11px] tracking-[0.15em] text-stone-500 uppercase">
-            Name
+            Nom
           </p>
           <p className="mt-1 text-stone-900">{site.contactName}</p>
         </li>
         <li>
           <p className="text-[11px] tracking-[0.15em] text-stone-500 uppercase">
-            Phone
+            Téléphone
           </p>
           <a
             href={`tel:${contactPhoneTel()}`}
@@ -38,7 +38,7 @@ export default function ContactPage() {
         </li>
         <li>
           <p className="text-[11px] tracking-[0.15em] text-stone-500 uppercase">
-            Email
+            E-mail
           </p>
           <a
             href={`mailto:${site.contactEmail}`}
@@ -49,13 +49,13 @@ export default function ContactPage() {
         </li>
         <li>
           <p className="text-[11px] tracking-[0.15em] text-stone-500 uppercase">
-            Quote page
+            Page devis
           </p>
           <Link
             href="/personal-shopping#quote-contact"
             className="mt-1 inline-block text-stone-900 underline-offset-4 hover:underline"
           >
-            Request a quote
+            Demander un devis
           </Link>
         </li>
       </ul>

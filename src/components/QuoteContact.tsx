@@ -15,14 +15,15 @@ export function QuoteContact() {
       className="scroll-mt-28 border border-stone-200 bg-stone-50 p-6 lg:p-8"
     >
       <p className="text-[11px] tracking-[0.25em] text-stone-500 uppercase">
-        Request a quote
+        Demander un devis
       </p>
       <h2 className="mt-2 font-serif text-2xl text-stone-900">
-        Contact me directly
+        Contactez-moi directement
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-stone-600">
-        Send your product link, brand, size, and budget. I usually reply within
-        24–48 hours with availability and a price in EUR.
+        Envoyez le lien du produit, la marque, la taille et votre budget. Je
+        réponds en général sous 24–48 h avec la disponibilité et un prix en
+        euros.
       </p>
 
       <ul className="mt-8 space-y-5 border-t border-stone-200 pt-8 text-sm">
@@ -36,10 +37,10 @@ export function QuoteContact() {
         </li>
         <li>
           <p className="text-[10px] tracking-[0.2em] text-stone-500 uppercase">
-            Email
+            E-mail
           </p>
           <a
-            href={`mailto:${site.contactEmail}?subject=${encodeURIComponent("Quote request")}`}
+            href={`mailto:${site.contactEmail}?subject=${encodeURIComponent("Demande de devis")}`}
             className="mt-1 inline-block text-base text-stone-900 underline-offset-4 hover:underline"
           >
             {site.contactEmail}
@@ -49,7 +50,7 @@ export function QuoteContact() {
         {site.contactPhone ? (
           <li>
             <p className="text-[10px] tracking-[0.2em] text-stone-500 uppercase">
-              Phone
+              Téléphone
             </p>
             <a
               href={`tel:${contactPhoneTel()}`}
@@ -71,7 +72,7 @@ export function QuoteContact() {
               rel="noopener noreferrer"
               className="mt-1 inline-block text-stone-900 underline-offset-4 hover:underline"
             >
-              Message on WhatsApp
+              Écrire sur WhatsApp
             </a>
           </li>
         ) : null}
