@@ -57,7 +57,7 @@ export default function AppleIcon() {
             textTransform: "uppercase",
           }}
         >
-          RllCH
+          RIICH
         </span>
       </div>
     ),
