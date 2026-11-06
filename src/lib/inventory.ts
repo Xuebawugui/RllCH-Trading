@@ -86,7 +86,7 @@ export const inventory: InventoryItem[] = [
     price: 139.99,
     category: "shoes-accessories",
     image: "/products/bottega-veneta-orbit.jpg",
-    imageAlt: "Baskets Bottega Veneta Orbit mesh argent",
+    imageAlt: "Baskets Bottega Veneta Orbit argent",
   },
   {
     id: "nike-phenom-elite",
@@ -95,7 +95,7 @@ export const inventory: InventoryItem[] = [
     price: 79.99,
     category: "sportswear-sneakers",
     image: "/products/nike-phenom-elite.jpg",
-    imageAlt: "Pantalon d'entraînement Nike Phenom Élite noir",
+    imageAlt: "Pantalon Nike Phenom Élite noir",
   },
 ];
 
