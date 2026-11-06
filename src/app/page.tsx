@@ -1,69 +1,126 @@
-import Image from "next/image";
+import Link from "next/link";
+import { CategoryCard } from "@/components/CategoryCard";
+import { HeroCarousel } from "@/components/HeroCarousel";
+import { ProductCard } from "@/components/ProductCard";
+import { categories } from "@/lib/categories";
+import { inventory } from "@/lib/inventory";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <HeroCarousel />
+
+      <section className="mx-auto max-w-7xl px-4 py-16 lg:px-6 lg:py-24">
+        <div className="grid gap-10 lg:grid-cols-3 lg:gap-16">
+          {[
+            {
+              step: "01",
+              title: "Tell me what you want",
+              text: "Share brand, model, size, and budget — or send a link. No account required.",
+            },
+            {
+              step: "02",
+              title: "Receive a tailored offer",
+              text: "I source from trusted retailers and partners, then send a clear quote with timeline.",
+            },
+            {
+              step: "03",
+              title: "Confirm & receive",
+              text: "Once you approve, I handle purchase coordination and keep you updated until delivery.",
+            },
+          ].map((item) => (
+            <div key={item.step} className="border-t border-stone-300 pt-6">
+              <p className="text-[11px] tracking-[0.25em] text-stone-500">
+                {item.step}
+              </p>
+              <h2 className="mt-3 font-serif text-2xl text-stone-900">
+                {item.title}
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-stone-600">
+                {item.text}
+              </p>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </section>
+
+      <section id="categories" className="bg-white py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 lg:px-6">
+          <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-[11px] tracking-[0.25em] text-stone-500 uppercase">
+                Collections
+              </p>
+              <h2 className="mt-2 font-serif text-3xl text-stone-900 lg:text-4xl">
+                Shop by category
+              </h2>
+            </div>
+            <p className="max-w-md text-sm text-stone-600">
+              Browse by category — listed prices are for current in-stock pieces.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {categories.map((cat, i) => (
+              <CategoryCard key={cat.slug} category={cat} priority={i < 3} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 lg:px-6 lg:py-24">
+        <div className="mb-10 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-[11px] tracking-[0.25em] text-stone-500 uppercase">
+              In stock
+            </p>
+            <h2 className="mt-2 font-serif text-3xl text-stone-900">
+              Available now
+            </h2>
+          </div>
+          <Link
+            href="/personal-shopping#quote-contact"
+            className="text-[11px] tracking-[0.2em] text-stone-800 uppercase underline-offset-4 hover:underline"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+            Contact to buy
+          </Link>
+        </div>
+        <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-3 lg:gap-x-6">
+          {inventory.map((item) => (
+            <ProductCard
+              key={item.id}
+              product={{
+                id: item.id,
+                brand: item.brand,
+                name: item.name,
+                price: item.price,
+                image: item.image,
+                imageAlt: item.imageAlt,
+              }}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="bg-stone-900 px-4 py-20 text-center text-white lg:px-6">
+        <div className="mx-auto max-w-2xl">
+          <p className="text-[11px] tracking-[0.3em] uppercase text-white/70">
+            Personal shopping
+          </p>
+          <h2 className="mt-4 font-serif text-3xl lg:text-4xl">
+            Can&apos;t find it listed? I&apos;ll source it for you.
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-white/80">
+            Specific products, rare sizes, sold-out drops, or full outfits — get
+            in touch for a personalized offer.
+          </p>
+          <Link
+            href="/personal-shopping#quote-contact"
+            className="mt-8 inline-block border border-white px-10 py-3.5 text-[11px] tracking-[0.25em] uppercase transition hover:bg-white hover:text-stone-900"
+          >
+            View contact & quote
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }

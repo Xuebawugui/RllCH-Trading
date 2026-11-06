@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RllCH Brand Trading
 
-## Getting Started
+A Mytheresa-inspired personal shopping and sourcing site built with **Next.js**, ready for **GitHub** and **Vercel**.
 
-First, run the development server:
+## Features
+
+- Editorial homepage with hero, category grid, and featured products
+- Six product categories plus **Personal Shopping** concierge flow
+- Category pages with brand lists and example products (EUR “from” pricing)
+- Mobile navigation and luxury-minimal typography
+- Contact via configurable email, Instagram, and WhatsApp
+
+## Local development
 
 ```bash
+npm install
+cp .env.example .env.local   # then edit your contact details
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customize branding
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Edit `src/lib/site.ts` for site name, tagline, and description.  
+Edit `src/lib/categories.ts` for categories, brands, products, and starting prices.
 
-## Learn More
+## Deploy to Vercel (from GitHub)
 
-To learn more about Next.js, take a look at the following resources:
+1. Push this folder to a GitHub repository.
+2. Sign in at [vercel.com](https://vercel.com) → **Add New Project** → import your repo.
+3. Framework preset: **Next.js** (defaults are fine).
+4. Add environment variables from `.env.example` in the Vercel project settings.
+5. Deploy. Vercel will rebuild on every push to `main`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy checklist
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [ ] Set `NEXT_PUBLIC_CONTACT_EMAIL` to your real inbox
+- [ ] Add Instagram / WhatsApp if you use them
+- [ ] Replace placeholder products in `categories.ts` with your own edits
+- [ ] Optional: connect a form backend (Formspree, Resend, etc.) instead of `mailto`
 
-## Deploy on Vercel
+## Tech stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Next.js App Router
+- TypeScript
+- Tailwind CSS v4
+- Images from [Unsplash](https://unsplash.com) (replace with your own assets in production)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Legal note
+
+Brand names in this project are used to describe sourcing categories only. Update footer copy and product content to match your business model and local regulations.
