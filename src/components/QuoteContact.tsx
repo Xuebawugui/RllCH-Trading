@@ -88,7 +88,7 @@ export function QuoteContact() {
               rel="noopener noreferrer"
               className="mt-1 inline-block text-stone-900 underline-offset-4 hover:underline"
             >
-              {site.instagram.replace(/^https?:\/\/(www\.)?/, "")}
+              {site.instagramHandle}
             </a>
           </li>
         ) : null}

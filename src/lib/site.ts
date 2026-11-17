@@ -8,7 +8,10 @@ export const site = {
   locale: "fr-FR",
   contactEmail: "riitch.xx@gmail.com",
   contactPhone: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "0780297449",
-  instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "",
+  instagram:
+    process.env.NEXT_PUBLIC_INSTAGRAM_URL ??
+    "https://www.instagram.com/riich.srcg/",
+  instagramHandle: "@riich.srcg",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "33780297449",
 } as const;
 

@@ -47,6 +47,21 @@ export default function ContactPage() {
             {site.contactEmail}
           </a>
         </li>
+        {site.instagram ? (
+          <li>
+            <p className="text-[11px] tracking-[0.15em] text-stone-500 uppercase">
+              Instagram
+            </p>
+            <a
+              href={site.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 inline-block text-stone-900 underline-offset-4 hover:underline"
+            >
+              {site.instagramHandle}
+            </a>
+          </li>
+        ) : null}
         <li>
           <p className="text-[11px] tracking-[0.15em] text-stone-500 uppercase">
             Page devis
